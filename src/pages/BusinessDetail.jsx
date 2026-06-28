@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { HiStar, HiLocationMarker, HiPhone, HiArrowRight, HiShare, HiHeart } from 'react-icons/hi'
 import { supabase } from '../lib/supabase'
 import { useAuth } from '../lib/AuthContext'
+import BusinessMap from '../components/BusinessMap'
 
 function ReviewForm({ businessId, onSubmitted, userReview }) {
   const { user } = useAuth()
@@ -293,6 +294,8 @@ export default function BusinessDetail() {
                   </div>
                 </div>
               )}
+
+              <BusinessMap address={business.address} name={business.name} />
             </div>
           </div>
         </div>
